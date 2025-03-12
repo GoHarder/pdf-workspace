@@ -18,7 +18,8 @@ npm run build
 Watch for changes:
 
 ```bash
-npm run watch
+# To watch for changes in the motor-pad.js file
+node --watch src/motor-pad.js
 ```
 
 ## License
