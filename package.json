@@ -1,0 +1,23 @@
+{
+  "name": "pdf-workspace",
+  "version": "1.0.0",
+  "description": "A workspace to create JavaScript for PDFs",
+  "license": "MIT",
+  "author": "Gregory Harder",
+  "type": "module",
+  "scripts": {
+    "build": "rollup -c",
+    "src": "node src/*.js",
+    "watch": "npm-watch"
+  },
+  "watch": {
+    "src": "src/*.js"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.26.9",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-terser": "^0.4.4",
+    "npm-watch": "^0.13.0",
+    "rollup": "^4.35.0"
+  }
+}
