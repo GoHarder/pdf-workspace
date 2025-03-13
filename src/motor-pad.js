@@ -1,5 +1,32 @@
+// @ts-check
+
 import { Select, Button, TextField } from './lib/inputs.js';
 
+/**
+ * @typedef DrawingTableRow
+ * @property {number} machine
+ * @property {'DISC'|'DRUM'} brakeType
+ * @property {string} motorFrame
+ * @property {string} manufacturer
+ * @property {number} dimA
+ * @property {number} dimB
+ * @property {number} dimC
+ * @property {number|null} dimL
+ * @property {number} dimW
+ * @property {number} item1Qty
+ * @property {string} item1Part
+ * @property {string} item1Desc
+ * @property {number|null} item2Qty
+ * @property {string|null} item2Part
+ * @property {string|null} item2Desc
+ * @property {number|null} item3Qty
+ * @property {string|null} item3Part
+ * @property {string|null} item3Desc
+ * @property {number} finish
+ * @property {string|null} notes
+ */
+
+/** @type {DrawingTableRow[]} */
 const drawingTable = [
   {
     machine: 34,
@@ -21,7 +48,7 @@ const drawingTable = [
     item3Part: '4 X 5.4# X 12',
     item3Desc: 'CHANNEL, 12" LONG',
     finish: 1.625,
-    notes: '',
+    notes: null,
   },
   {
     machine: 34,
@@ -39,11 +66,11 @@ const drawingTable = [
     item2Qty: 2,
     item2Part: '0.75 X 4 X 14.5',
     item2Desc: 'STEEL PLATE',
-    item3Qty: '',
-    item3Part: '',
-    item3Desc: '',
+    item3Qty: null,
+    item3Part: null,
+    item3Desc: null,
     finish: 0.625,
-    notes: '',
+    notes: null,
   },
   {
     machine: 34,
@@ -61,11 +88,11 @@ const drawingTable = [
     item2Qty: 2,
     item2Part: '0.75 X 4 X 14.5',
     item2Desc: 'STEEL PLATE',
-    item3Qty: '',
-    item3Part: '',
-    item3Desc: '',
+    item3Qty: null,
+    item3Part: null,
+    item3Desc: null,
     finish: 0.625,
-    notes: '',
+    notes: null,
   },
   {
     machine: 34,
@@ -80,12 +107,12 @@ const drawingTable = [
     item1Qty: 4,
     item1Part: '0.625 X 4 X 4',
     item1Desc: 'STEEL PLATE',
-    item2Qty: '',
-    item2Part: '',
-    item2Desc: '',
-    item3Qty: '',
-    item3Part: '',
-    item3Desc: '',
+    item2Qty: null,
+    item2Part: null,
+    item2Desc: null,
+    item3Qty: null,
+    item3Part: null,
+    item3Desc: null,
     finish: 0.125,
     notes: 'STD BASE ONLY',
   },
@@ -97,17 +124,17 @@ const drawingTable = [
     dimA: 27.813,
     dimB: 2.75,
     dimC: 7.5,
-    dimL: '',
+    dimL: null,
     dimW: 4,
     item1Qty: 2,
     item1Part: '0.625 X 4 X 15',
     item1Desc: 'STEEL PLATE',
-    item2Qty: '',
-    item2Part: '',
-    item2Desc: 'null',
-    item3Qty: '',
-    item3Part: '',
-    item3Desc: '',
+    item2Qty: null,
+    item2Part: null,
+    item2Desc: null,
+    item3Qty: null,
+    item3Part: null,
+    item3Desc: null,
     finish: 0.125,
     notes: 'RG MTG ONLY',
   },
@@ -124,12 +151,12 @@ const drawingTable = [
     item1Qty: 4,
     item1Part: '0.625 X 4 X 4',
     item1Desc: 'STEEL PLATE',
-    item2Qty: '',
-    item2Part: '',
-    item2Desc: 'null',
-    item3Qty: '',
-    item3Part: '',
-    item3Desc: '',
+    item2Qty: null,
+    item2Part: null,
+    item2Desc: null,
+    item3Qty: null,
+    item3Part: null,
+    item3Desc: null,
     finish: 0.125,
     notes: 'STD BASE ONLY',
   },
@@ -141,17 +168,17 @@ const drawingTable = [
     dimA: 28.563,
     dimB: 3.5,
     dimC: 7.5,
-    dimL: '',
+    dimL: null,
     dimW: 4,
     item1Qty: 2,
     item1Part: '0.625 X 4 X 15',
     item1Desc: 'STEEL PLATE',
-    item2Qty: '',
-    item2Part: '',
-    item2Desc: 'null',
-    item3Qty: '',
-    item3Part: '',
-    item3Desc: '',
+    item2Qty: null,
+    item2Part: null,
+    item2Desc: null,
+    item3Qty: null,
+    item3Part: null,
+    item3Desc: null,
     finish: 0.125,
     notes: 'RG MTG ONLY',
   },
@@ -175,7 +202,7 @@ const drawingTable = [
     item3Part: '4 X 13.8# X 12.5',
     item3Desc: 'SHIP CHANNEL, 12.5" LONG',
     finish: 2.375,
-    notes: '',
+    notes: null,
   },
   {
     machine: 43,
@@ -197,7 +224,7 @@ const drawingTable = [
     item3Part: '4 X 5.4# X 14',
     item3Desc: 'CHANNEL, 14" LONG',
     finish: 1.375,
-    notes: '',
+    notes: null,
   },
   {
     machine: 43,
@@ -219,7 +246,7 @@ const drawingTable = [
     item3Part: '4 X 5.4# X 14',
     item3Desc: 'CHANNEL, 14" LONG',
     finish: 1.375,
-    notes: '',
+    notes: null,
   },
   {
     machine: 43,
@@ -237,11 +264,11 @@ const drawingTable = [
     item2Qty: 2,
     item2Part: '0.625 X 4 X 15.5',
     item2Desc: 'STEEL PLATE',
-    item3Qty: '',
-    item3Part: '',
-    item3Desc: '',
+    item3Qty: null,
+    item3Part: null,
+    item3Desc: null,
     finish: 0.625,
-    notes: '',
+    notes: null,
   },
   {
     machine: 43,
@@ -259,11 +286,11 @@ const drawingTable = [
     item2Qty: 2,
     item2Part: '0.625 X 4 X 15.5',
     item2Desc: 'STEEL PLATE',
-    item3Qty: '',
-    item3Part: '',
-    item3Desc: '',
+    item3Qty: null,
+    item3Part: null,
+    item3Desc: null,
     finish: 0.625,
-    notes: '',
+    notes: null,
   },
   {
     machine: 43,
@@ -278,14 +305,14 @@ const drawingTable = [
     item1Qty: 4,
     item1Part: '0.625 X 4 X 5',
     item1Desc: 'STEEL PLATE',
-    item2Qty: '',
-    item2Part: '',
-    item2Desc: 'null',
-    item3Qty: '',
-    item3Part: '',
-    item3Desc: '',
+    item2Qty: null,
+    item2Part: null,
+    item2Desc: null,
+    item3Qty: null,
+    item3Part: null,
+    item3Desc: null,
     finish: 0.375,
-    notes: '',
+    notes: null,
   },
   {
     machine: 43,
@@ -300,14 +327,14 @@ const drawingTable = [
     item1Qty: 4,
     item1Part: '0.625 X 4 X 5',
     item1Desc: 'STEEL PLATE',
-    item2Qty: '',
-    item2Part: '',
-    item2Desc: 'null',
-    item3Qty: '',
-    item3Part: '',
-    item3Desc: '',
+    item2Qty: null,
+    item2Part: null,
+    item2Desc: null,
+    item3Qty: null,
+    item3Part: null,
+    item3Desc: null,
     finish: 0.375,
-    notes: '',
+    notes: null,
   },
   {
     machine: 44,
@@ -329,7 +356,7 @@ const drawingTable = [
     item3Part: '4 X 13.8# X 12.5',
     item3Desc: 'SHIP CHANNEL, 12.5" LONG',
     finish: 2.375,
-    notes: '',
+    notes: null,
   },
   {
     machine: 44,
@@ -351,7 +378,7 @@ const drawingTable = [
     item3Part: '5 X 6.7# X 14',
     item3Desc: 'CHANNEL, 14" LONG',
     finish: 1.375,
-    notes: '',
+    notes: null,
   },
   {
     machine: 44,
@@ -373,7 +400,7 @@ const drawingTable = [
     item3Part: '5 X 6.7# X 14',
     item3Desc: 'CHANNEL, 14" LONG',
     finish: 1.375,
-    notes: '',
+    notes: null,
   },
   {
     machine: 44,
@@ -391,11 +418,11 @@ const drawingTable = [
     item2Qty: 2,
     item2Part: '0.625 X 4 X 15.5',
     item2Desc: 'STEEL PLATE',
-    item3Qty: '',
-    item3Part: '',
-    item3Desc: '',
+    item3Qty: null,
+    item3Part: null,
+    item3Desc: null,
     finish: 0.625,
-    notes: '',
+    notes: null,
   },
   {
     machine: 44,
@@ -413,11 +440,11 @@ const drawingTable = [
     item2Qty: 2,
     item2Part: '0.625 X 4 X 15.5',
     item2Desc: 'STEEL PLATE',
-    item3Qty: '',
-    item3Part: '',
-    item3Desc: '',
+    item3Qty: null,
+    item3Part: null,
+    item3Desc: null,
     finish: 0.625,
-    notes: '',
+    notes: null,
   },
   {
     machine: 44,
@@ -432,14 +459,14 @@ const drawingTable = [
     item1Qty: 4,
     item1Part: '0.625 X 4 X 5',
     item1Desc: 'STEEL PLATE',
-    item2Qty: '',
-    item2Part: '',
-    item2Desc: 'null',
-    item3Qty: '',
-    item3Part: '',
-    item3Desc: '',
+    item2Qty: null,
+    item2Part: null,
+    item2Desc: null,
+    item3Qty: null,
+    item3Part: null,
+    item3Desc: null,
     finish: 0.375,
-    notes: '',
+    notes: null,
   },
   {
     machine: 44,
@@ -454,21 +481,21 @@ const drawingTable = [
     item1Qty: 4,
     item1Part: '0.625 X 4 X 5',
     item1Desc: 'STEEL PLATE',
-    item2Qty: '',
-    item2Part: '',
-    item2Desc: 'null',
-    item3Qty: '',
-    item3Part: '',
-    item3Desc: '',
+    item2Qty: null,
+    item2Part: null,
+    item2Desc: null,
+    item3Qty: null,
+    item3Part: null,
+    item3Desc: null,
     finish: 0.375,
-    notes: '',
+    notes: null,
   },
   {
     machine: 53,
     brakeType: 'DRUM',
     motorFrame: '254T',
     manufacturer: 'IMP',
-    dimA: 1.0,
+    dimA: 1,
     dimB: 0.5,
     dimC: 2.625,
     dimL: 4,
@@ -483,7 +510,7 @@ const drawingTable = [
     item3Part: '6 X 15.3# X 13.25',
     item3Desc: 'SHIP CHANNEL, 13.25" LONG',
     finish: 3.125,
-    notes: '',
+    notes: null,
   },
   {
     machine: 53,
@@ -505,7 +532,7 @@ const drawingTable = [
     item3Part: '6 X 15.3# X 13.25',
     item3Desc: 'SHIP CHANNEL, 13.25" LONG',
     finish: 3.125,
-    notes: '',
+    notes: null,
   },
   {
     machine: 53,
@@ -527,7 +554,7 @@ const drawingTable = [
     item3Part: '4 X 13.8# X 15',
     item3Desc: 'SHIP CHANNEL, 15" LONG',
     finish: 2.375,
-    notes: '',
+    notes: null,
   },
   {
     machine: 53,
@@ -549,7 +576,7 @@ const drawingTable = [
     item3Part: '4 X 13.8# X 15',
     item3Desc: 'SHIP CHANNEL, 15" LONG',
     finish: 2.375,
-    notes: '',
+    notes: null,
   },
   {
     machine: 53,
@@ -571,7 +598,7 @@ const drawingTable = [
     item3Part: '5 X 6.7# X 17',
     item3Desc: 'CHANNEL, 17" LONG',
     finish: 1.375,
-    notes: '',
+    notes: null,
   },
   {
     machine: 53,
@@ -593,7 +620,7 @@ const drawingTable = [
     item3Part: '5 X 6.7# X 17',
     item3Desc: 'CHANNEL, 17" LONG',
     finish: 1.375,
-    notes: '',
+    notes: null,
   },
   {
     machine: 53,
@@ -611,11 +638,11 @@ const drawingTable = [
     item2Qty: 2,
     item2Part: '0.625 X 4 X 19',
     item2Desc: 'STEEL PLATE',
-    item3Qty: '',
-    item3Part: '',
-    item3Desc: '',
+    item3Qty: null,
+    item3Part: null,
+    item3Desc: null,
     finish: 0.375,
-    notes: '',
+    notes: null,
   },
   {
     machine: 53,
@@ -633,11 +660,11 @@ const drawingTable = [
     item2Qty: 2,
     item2Part: '0.625 X 4 X 19',
     item2Desc: 'STEEL PLATE',
-    item3Qty: '',
-    item3Part: '',
-    item3Desc: '',
+    item3Qty: null,
+    item3Part: null,
+    item3Desc: null,
     finish: 0.375,
-    notes: '',
+    notes: null,
   },
   {
     machine: 54,
@@ -659,7 +686,7 @@ const drawingTable = [
     item3Part: '6 X 15.3# X 13.25',
     item3Desc: 'SHIP CHANNEL, 13.25" LONG',
     finish: 3.125,
-    notes: '',
+    notes: null,
   },
   {
     machine: 54,
@@ -681,7 +708,7 @@ const drawingTable = [
     item3Part: '6 X 15.3# X 13.25',
     item3Desc: 'SHIP CHANNEL, 13.25" LONG',
     finish: 3.125,
-    notes: '',
+    notes: null,
   },
   {
     machine: 54,
@@ -703,7 +730,7 @@ const drawingTable = [
     item3Part: '4 X 13.8# X 15',
     item3Desc: 'SHIP CHANNEL, 15" LONG',
     finish: 2.375,
-    notes: '',
+    notes: null,
   },
   {
     machine: 54,
@@ -725,7 +752,7 @@ const drawingTable = [
     item3Part: '4 X 13.8# X 15',
     item3Desc: 'SHIP CHANNEL, 15" LONG',
     finish: 2.375,
-    notes: '',
+    notes: null,
   },
   {
     machine: 54,
@@ -747,7 +774,7 @@ const drawingTable = [
     item3Part: '5 X 6.7# X 17',
     item3Desc: 'CHANNEL, 17" LONG',
     finish: 1.375,
-    notes: '',
+    notes: null,
   },
   {
     machine: 54,
@@ -769,7 +796,7 @@ const drawingTable = [
     item3Part: '5 X 6.7# X 17',
     item3Desc: 'CHANNEL, 17" LONG',
     finish: 1.375,
-    notes: '',
+    notes: null,
   },
   {
     machine: 54,
@@ -787,11 +814,11 @@ const drawingTable = [
     item2Qty: 2,
     item2Part: '0.625 X 4 X 19',
     item2Desc: 'STEEL PLATE',
-    item3Qty: '',
-    item3Part: '',
-    item3Desc: '',
+    item3Qty: null,
+    item3Part: null,
+    item3Desc: null,
     finish: 0.375,
-    notes: '',
+    notes: null,
   },
   {
     machine: 54,
@@ -809,11 +836,11 @@ const drawingTable = [
     item2Qty: 2,
     item2Part: '0.625 X 4 X 19',
     item2Desc: 'STEEL PLATE',
-    item3Qty: '',
-    item3Part: '',
-    item3Desc: '',
+    item3Qty: null,
+    item3Part: null,
+    item3Desc: null,
     finish: 0.375,
-    notes: '',
+    notes: null,
   },
   {
     machine: 63,
@@ -835,7 +862,7 @@ const drawingTable = [
     item3Part: '6 X 15.3# X 17',
     item3Desc: 'SHIP CHANNEL, 17" LONG',
     finish: 3.25,
-    notes: '',
+    notes: null,
   },
   {
     machine: 63,
@@ -857,7 +884,7 @@ const drawingTable = [
     item3Part: '6 X 15.3# X 17',
     item3Desc: 'SHIP CHANNEL, 17" LONG',
     finish: 3.25,
-    notes: '',
+    notes: null,
   },
   {
     machine: 63,
@@ -879,7 +906,7 @@ const drawingTable = [
     item3Part: '6 X 12.0# X 18.5',
     item3Desc: 'SHIP CHANNEL, 18.5" LONG',
     finish: 2.25,
-    notes: '',
+    notes: null,
   },
   {
     machine: 63,
@@ -901,7 +928,7 @@ const drawingTable = [
     item3Part: '6 X 12.0# X 18.5',
     item3Desc: 'SHIP CHANNEL, 18.5" LONG',
     finish: 2.25,
-    notes: '',
+    notes: null,
   },
   {
     machine: 63,
@@ -923,7 +950,7 @@ const drawingTable = [
     item3Part: '5 X 6.7# X 21',
     item3Desc: 'CHANNEL, 21" LONG',
     finish: 1.25,
-    notes: '',
+    notes: null,
   },
   {
     machine: 63,
@@ -945,7 +972,7 @@ const drawingTable = [
     item3Part: '5 X 6.7# X 21',
     item3Desc: 'CHANNEL, 21" LONG',
     finish: 1.25,
-    notes: '',
+    notes: null,
   },
   {
     machine: 64,
@@ -967,7 +994,7 @@ const drawingTable = [
     item3Part: '6 X 15.3# X 17',
     item3Desc: 'SHIP CHANNEL, 17" LONG',
     finish: 3.25,
-    notes: '',
+    notes: null,
   },
   {
     machine: 64,
@@ -989,7 +1016,7 @@ const drawingTable = [
     item3Part: '6 X 15.3# X 17',
     item3Desc: 'SHIP CHANNEL, 17" LONG',
     finish: 3.25,
-    notes: '',
+    notes: null,
   },
   {
     machine: 64,
@@ -1011,7 +1038,7 @@ const drawingTable = [
     item3Part: '6 X 12.0# X 18.5',
     item3Desc: 'SHIP CHANNEL, 18.5" LONG',
     finish: 2.25,
-    notes: '',
+    notes: null,
   },
   {
     machine: 64,
@@ -1033,7 +1060,7 @@ const drawingTable = [
     item3Part: '6 X 12.0# X 18.5',
     item3Desc: 'SHIP CHANNEL, 18.5" LONG',
     finish: 2.25,
-    notes: '',
+    notes: null,
   },
   {
     machine: 64,
@@ -1055,7 +1082,7 @@ const drawingTable = [
     item3Part: '5 X 6.7# X 21',
     item3Desc: 'CHANNEL, 21" LONG',
     finish: 1.25,
-    notes: '',
+    notes: null,
   },
   {
     machine: 64,
@@ -1077,7 +1104,7 @@ const drawingTable = [
     item3Part: '5 X 6.7# X 21',
     item3Desc: 'CHANNEL, 21" LONG',
     finish: 1.25,
-    notes: '',
+    notes: null,
   },
   {
     machine: 74,
@@ -1148,28 +1175,32 @@ const machineBaseNames = [
   '74-OH-1-RT',
 ];
 
-const motorFrameSelect = new Select('motor_frame', '256T');
-const machineBaseModelSelect = new Select('machine_base_model', '34-OH-1');
-const updateButton = new Button();
-const motorManufacturerField = new TextField();
-const brakeTypeField = new TextField();
-const motorPadFinishField = new TextField();
+const motorFrameSelect = new Select('motor_frame');
+const machineBaseModelSelect = new Select('machine_base_model');
+const updateButton = new Button('update');
+const motorManufacturerField = new TextField('motor_manufacturer');
+const brakeTypeField = new TextField('brake_type');
+const motorPadFinishField = new TextField('motor_pad_finish');
 
-const motorPadBomQtyField1 = new TextField();
-const motorPadBomQtyField2 = new TextField();
-const motorPadBomQtyField3 = new TextField();
-const motorPadBomPartNumField1 = new TextField();
-const motorPadBomPartNumField2 = new TextField();
-const motorPadBomPartNumField3 = new TextField();
-const motorPadBomDescField1 = new TextField();
-const motorPadBomDescField2 = new TextField();
-const motorPadBomDescField3 = new TextField();
+const motorPadBomQtyField1 = new TextField('motor_pad_bom_qty_1');
+const motorPadBomQtyField2 = new TextField('motor_pad_bom_qty_2');
+const motorPadBomQtyField3 = new TextField('motor_pad_bom_qty_3');
+const motorPadBomPartNumField1 = new TextField('motor_pad_bom_part_num_1');
+const motorPadBomPartNumField2 = new TextField('motor_pad_bom_part_num_2');
+const motorPadBomPartNumField3 = new TextField('motor_pad_bom_part_num_3');
+const motorPadBomDescField1 = new TextField('motor_pad_bom_desc_1');
+const motorPadBomDescField2 = new TextField('motor_pad_bom_desc_2');
+const motorPadBomDescField3 = new TextField('motor_pad_bom_desc_3');
 
-const motorPadDimFieldA = new TextField();
-const motorPadDimFieldB = new TextField();
-const motorPadDimFieldC = new TextField();
-const motorPadDimFieldL = new TextField();
-const motorPadDimFieldW = new TextField();
+const motorPadDimFieldA = new TextField('motor_pad_dim_a');
+const motorPadDimFieldB = new TextField('motor_pad_dim_b');
+const motorPadDimFieldC = new TextField('motor_pad_dim_c');
+const motorPadDimFieldL = new TextField('motor_pad_dim_l');
+const motorPadDimFieldW = new TextField('motor_pad_dim_w');
+const motorPadNotes = new TextField('motor_pad_notes');
+
+motorFrameSelect.value = '256T';
+machineBaseModelSelect.value = '34-OH-1';
 
 // const motorFrameSelect = this.getField('motor_frame');
 // const machineBaseModelSelect = this.getField('machine_base_model');
@@ -1192,13 +1223,11 @@ const motorPadDimFieldW = new TextField();
 // const motorPadDimFieldC = this.getField('motor_pad_dim_c');
 // const motorPadDimFieldL = this.getField('motor_pad_dim_l');
 // const motorPadDimFieldW = this.getField('motor_pad_dim_w');
+// const motorPadNotes = this.getField('motor_pad_notes');
 
 /**
- * @template Row extends Record<string, any>
- * @template Key extends keyof Row
- * @param {Row[]} arr
- * @param {Key} key
- * @returns {Row[Key][]}
+ * @param {Record<string, any>[]} arr
+ * @param {string} key
  */
 function getOptions(arr, key) {
   const options = [];
@@ -1221,30 +1250,14 @@ function populateDrawing() {
 export function updateFields() {
   const frame = motorFrameSelect.value;
   const machineBase = machineBaseModelSelect.value;
+
+  if (!frame || !machineBase) return;
+
   const [machineStr] = machineBase.split('-');
   const machineNum = parseInt(machineStr);
 
-  /** @type {typeof drawingTable[number] | undefined} */
-  let findResult = {
-    brakeType: '', // DONE
-    manufacturer: '', // DONE
-    dimA: '', // DONE
-    dimB: '', // DONE
-    dimC: '', // DONE
-    dimL: '', // DONE
-    dimW: '', // DONE
-    item1Qty: '', // DONE
-    item1Part: '', // DONE
-    item1Desc: '', // DONE
-    item2Qty: '', // DONE
-    item2Part: '', // DONE
-    item2Desc: '', // DONE
-    item3Qty: '', // DONE
-    item3Part: '', // DONE
-    item3Desc: '', // DONE
-    finish: '', // DONE
-    notes: '',
-  };
+  /** @type { Omit<typeof drawingTable[number], 'machine' | 'motorFrame'> | undefined} */
+  let findResult = undefined;
 
   for (let i = 0; i < drawingTable.length; i++) {
     const row = drawingTable[i];
@@ -1254,29 +1267,51 @@ export function updateFields() {
     break;
   }
 
-  if (!findResult.manufacturer) return;
+  if (!findResult) return;
 
-  const { brakeType, dimA, dimB, dimC, dimL, dimW, item1Desc, item1Part, item1Qty, item2Desc, item2Part, item2Qty, item3Desc, item3Part, item3Qty, finish, manufacturer } =
-    findResult;
+  const {
+    brakeType,
+    dimA,
+    dimB,
+    dimC,
+    dimL,
+    dimW,
+    item1Desc,
+    item1Part,
+    item1Qty,
+    item2Desc,
+    item2Part,
+    item2Qty,
+    item3Desc,
+    item3Part,
+    item3Qty,
+    finish,
+    manufacturer,
+    notes,
+  } = findResult;
 
   motorManufacturerField.value = `${frame} ${manufacturer}`;
   brakeTypeField.value = brakeType;
-  motorPadFinishField.value = finish;
+  motorPadFinishField.value = `${finish}`;
 
-  motorPadBomQtyField1.value = item1Qty;
-  motorPadBomQtyField2.value = item2Qty;
-  motorPadBomQtyField3.value = item3Qty;
+  motorPadBomQtyField1.value = `${item1Qty}`;
   motorPadBomPartNumField1.value = item1Part;
-  motorPadBomPartNumField2.value = item2Part;
-  motorPadBomPartNumField3.value = item3Part;
   motorPadBomDescField1.value = item1Desc;
-  motorPadBomDescField2.value = item2Desc;
-  motorPadBomDescField3.value = item3Desc;
-  motorPadDimFieldA.value = dimA;
-  motorPadDimFieldB.value = dimB;
-  motorPadDimFieldC.value = dimC;
-  motorPadDimFieldL.value = dimL;
-  motorPadDimFieldW.value = dimW;
+
+  motorPadBomQtyField2.value = item2Qty ? `${item2Qty}` : '';
+  motorPadBomPartNumField2.value = item2Part ? item2Part : '';
+  motorPadBomDescField2.value = item2Desc ? item2Desc : '';
+
+  motorPadBomQtyField3.value = item3Qty ? `${item3Qty}` : '';
+  motorPadBomPartNumField3.value = item3Part ? item3Part : '';
+  motorPadBomDescField3.value = item3Desc ? item3Desc : '';
+
+  motorPadDimFieldA.value = `${dimA}`;
+  motorPadDimFieldB.value = `${dimB}`;
+  motorPadDimFieldC.value = `${dimC}`;
+  motorPadDimFieldL.value = dimL ? `${dimL}` : '';
+  motorPadDimFieldW.value = dimW ? `${dimW}` : '';
+  motorPadNotes.value = notes || '';
 
   console.table({
     motor_frame: frame,
@@ -1303,11 +1338,13 @@ export function updateFields() {
     motor_pad_dim_c: motorPadDimFieldC.value,
     motor_pad_dim_l: motorPadDimFieldL.value,
     motor_pad_dim_w: motorPadDimFieldW.value,
+
+    notes: motorPadNotes.value,
   });
 }
 
 populateDrawing();
 
-updateFields();
+// updateFields();
 
 updateButton.setAction('MouseUp', 'updateFields()');

@@ -1,7 +1,28 @@
-export class Select {
-  constructor(name, value) {
+// @ts-check
+
+class FormWidget {
+  /** @param {string} name */
+  constructor(name) {
     this.name = name;
-    this.value = value;
+    /** @type {string} */
+    this.value = undefined;
+  }
+
+  /**
+   * @param {string} action
+   * @param {string} code
+   */
+  setAction(action, code) {
+    this.action = action;
+    this.code = code;
+  }
+}
+
+/** Class simulating a drop-down list. */
+export class Select extends FormWidget {
+  /** @param {string} name */
+  constructor(name) {
+    super(name);
     this.values = [];
   }
 
@@ -10,11 +31,18 @@ export class Select {
   }
 }
 
-export class Button {
-  constructor() {}
-  setAction(_action, _code) {}
+/** Class simulating a button. */
+export class Button extends FormWidget {
+  /** @param {string} name */
+  constructor(name) {
+    super(name);
+  }
 }
 
-export class TextField {
-  constructor() {}
+/** Class simulating a text field. */
+export class TextField extends FormWidget {
+  /** @param {string} name */
+  constructor(name) {
+    super(name);
+  }
 }
